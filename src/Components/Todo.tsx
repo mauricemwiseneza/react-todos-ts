@@ -6,9 +6,10 @@ import { Button } from "react-bootstrap";
 type TodoProps = {
     todo: TodoItem;
     toggleComplete: (id: number) => void;
+    deleteTodo: (id: number) => void;
 }
 
-export default function Todo ({ todo, toggleComplete } : TodoProps) {
+export default function Todo ({ todo, toggleComplete, deleteTodo } : TodoProps) {
     return (
         <div className="todo">
             <p className={todo?.completed ? 'todo-title-completed' : ''}>
@@ -21,7 +22,10 @@ export default function Todo ({ todo, toggleComplete } : TodoProps) {
                     >
                     {todo.completed ? 'Undo' : 'Complete'}
                 </Button>
-                <Button variant='outline-danger'>
+                <Button 
+                    variant='outline-danger'
+                    onClick={() => deleteTodo(todo.id)}
+                >
                     Delete
                 </Button>
             </div>
