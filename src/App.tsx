@@ -2,7 +2,6 @@ import './App.css'
 import { defaultTodos } from './data';
 import TodoList from './Components/TodoList';
 import { Button } from 'react-bootstrap';
-import { TodoItem } from './types';
 import { useState } from 'react';
 
 function App() {
