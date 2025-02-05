@@ -2,6 +2,7 @@ import './App.css'
 import { defaultTodos } from './data';
 import TodoList from './Components/TodoList';
 import { Button } from 'react-bootstrap';
+import { TodoItem } from './types';
 import { useState } from 'react';
 
 function App() {
@@ -16,8 +17,14 @@ function App() {
     setTodos([...todos, newTodo]);
   };
 
-  const toggleTodo = (id: number) => {
-    const updatedTodos = todos.map((todo)) 
+  const toggleComplete = (id: number) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
   }
 
   return (
@@ -26,7 +33,10 @@ function App() {
       <Button className='mt-2 mb-2' onClick={addTodo}>
         Add Todo
       </Button>
-      <TodoList todos={todos} />
+      <TodoList 
+        todos={todos}
+        toggleComplete={toggleComplete}
+        />
     </div>
   )
 }
