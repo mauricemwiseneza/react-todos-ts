@@ -13,7 +13,8 @@ export default function TodoList({ todos, toggleComplete, deleteTodo }: TodoList
   console.log(todos);
   return (
     <ListGroup>
-      {todos.map((todo: TodoItem) => (
+      {todos?.length > 0 ? (
+        todos.map((todo: TodoItem) => (
         <ListGroup.Item key={todo.id}>
           <Todo 
             todo={todo} 
@@ -21,7 +22,11 @@ export default function TodoList({ todos, toggleComplete, deleteTodo }: TodoList
             deleteTodo={deleteTodo}
           />
         </ListGroup.Item>
-      ))}
+      ))) : (
+        <h2 style={{ textAlign: "center", marginTop: '50px', color: "lightgray" }}>
+          All caught up! No tasks to do.
+        </h2>
+      )}
     </ListGroup>
-  )
+  );
 }
