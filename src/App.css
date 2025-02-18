@@ -1,9 +1,16 @@
 .container {
     width: 100vw;
     height: 100vh;
-}
-
+  }
+  
 .container h1 {
     text-align: center;
     margin-top: 50px;
-}
+  }
+  
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
