@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import NavBar from './NavBar';
+import Footer from './Components/Footer';
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -68,6 +69,7 @@ export default function Contact() {
                     Submit
                 </Button>
             </Form>
+            <Footer />
         </Container>
     );
 }

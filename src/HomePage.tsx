@@ -5,6 +5,8 @@ import { NewTodoItem, TodoItem } from "./types";
 import { useEffect, useState } from "react";
 
 import TodoList from "./Components/TodoList"
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 const BASE_URL = "https://679bb0c733d316846324c8eb.mockapi.io/todo";
 
@@ -130,7 +132,7 @@ function HomePage() {
           </p>
         </Alert>
       )}
-      <h1>Todo App Example</h1>
+      <Header />
       <form onSubmit={addTodo}>
         <Form.Control
           type="text"
@@ -153,6 +155,7 @@ function HomePage() {
           />
         )}
       </form>
+      <Footer />
     </div>
   );
 }

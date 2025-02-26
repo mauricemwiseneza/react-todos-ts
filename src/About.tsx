@@ -1,4 +1,5 @@
 import NavBar from "./NavBar";
+import Footer from "./Components/Footer";
 
 export default function About() {
     return (
@@ -25,6 +26,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
